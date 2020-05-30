@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="EggTimer">
+    <meta name="application-name" content="EggTimer">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <title>Таймер для варки яиц</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  </head>
+  <body>
+    <form method="get" action="/">
+      <h1>Таймер варки яиц</h1>
+      <h2>Хочу</h2>
+      <div class="states">
+        <input type="radio" name="state" id="state-soft" value="soft" checked>
+        <label for="state-soft">
+          <img src="soft.svg" width="197" height="237" alt="В мешочек">
+          <p>
+            В мешочек
+          </p>
+        </label>
+        <input type="radio" name="state" id="state-medium" value="medium">
+        <label for="state-medium">
+          <img src="medium.svg" width="167" height="221" alt="Всмятку">
+          <p>
+            Всмятку
+          </p>
+        </label>
+        <input type="radio" name="state" id="state-hard" value="hard">
+        <label for="state-hard">
+          <img src="hard.svg" width="171" height="221" alt="Вкрутую">
+          <p>
+            Вкрутую
+          </p>
+        </label>
+      </div>
+      <button class="timer" type="submit">
+        <img class="timer__image" src="timer.svg" width="879" height="898">
+        <img class="timer__inner" src="timer__inner.svg" width="879" height="898">
+        <p class="timer__time">
+          00:00
+        </p>
+      </button>
+    </form>
+    <script src="scripts.js"></script>
+  </body>
+</html>
