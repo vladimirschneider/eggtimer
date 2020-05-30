@@ -1,5 +1,9 @@
 const form = document.querySelector('form');
 
+const audio = new Audio();
+
+let audioIsActive = false;
+
 class Timer {
     constructor() {
         this.timerContainer = document.querySelector('.timer');
@@ -34,6 +38,17 @@ class Timer {
             this.timerContainer.classList.remove('timer--active');
         }
 
+        if (this.ms === 0 && !this.isPause) {
+            audio.play();
+            this.timerContainer.classList.add('timer--alarm');
+        }
+
+        if (this.isPause) {
+            audio.pause();
+            audio.currentTime = 0;
+            this.timerContainer.classList.remove('timer--alarm');
+        }
+
         setTimeout(this.go, 1000);
         this.updateHTML();
     }
@@ -51,6 +66,12 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     timer.toggle();
+
+    if (!audioIsActive) {
+        audio.play();
+        audio.src = './analog-watch-alarm_daniel-simion.mp3';
+        audioIsActive = true;
+    }
 });
 
 const states = document.querySelectorAll('[name="state"]');

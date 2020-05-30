@@ -7,6 +7,9 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
   padding: 12.5em 5.6em;
 
@@ -17,10 +20,11 @@ body {
   background-color: #000000;
 }
 
-form {
-  max-width: 120em;
+.container {
+  max-width: 130em;
   margin-right: auto;
   margin-left: auto;
+  padding: 0 5em;
 }
 
 h1 {
@@ -111,6 +115,10 @@ input:checked + label {
   transform: scale(1.05);
 }
 
+.timer--alarm .timer__time {
+  color: #d40b43;
+}
+
 .timer--active {
   filter: none;
 }
@@ -185,6 +193,8 @@ input:checked + label {
   color: white;
 
   transform: translate(-50%, -50%);
+
+  transition: color 200ms ease-in-out;
 }
 
 .timer__image {
@@ -207,4 +217,15 @@ input:checked + label {
   margin: 0;
 
   transform: translate(-50%, -50%);
+}
+
+footer {
+  margin-top: auto;
+  padding-top: 10em;
+}
+
+.github {
+  width: 6em;
+  height: 6em;
+  fill: #ffffff;
 }
