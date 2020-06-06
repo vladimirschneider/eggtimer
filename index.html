@@ -20,34 +20,88 @@
   <body>
     <form method="get" action="/">
       <div class="container">
-        <h1>Таймер варки яиц</h1>
+        <h1>Таймер варки</h1>
         <h2>Хочу</h2>
         <div class="states">
           <input type="radio" name="state" id="state-soft" value="soft" checked>
           <label for="state-soft">
-            <img src="soft.svg" width="197" height="237" alt="В мешочек">
+            <picture>
+              <img
+                srcset="soft@2x.png 2x"
+                src="./soft.png"
+                width="170.89"
+                height="221"
+                alt="В мешочек"
+              />
+            </picture>
             <p>
               В мешочек
             </p>
           </label>
           <input type="radio" name="state" id="state-medium" value="medium">
           <label for="state-medium">
-            <img src="medium.svg" width="167" height="221" alt="Всмятку">
+            <picture>
+              <img
+                srcset="medium@2x.png 2x"
+                src="./medium.png"
+                width="170.89"
+                height="221"
+                alt="Всмятку"
+              />
+            </picture>
             <p>
               Всмятку
             </p>
           </label>
           <input type="radio" name="state" id="state-hard" value="hard">
           <label for="state-hard">
-            <img src="hard.svg" width="171" height="221" alt="Вкрутую">
+            <picture>
+              <img
+                srcset="hard@2x.png 2x"
+                src="./hard.png"
+                width="170.89"
+                height="221"
+                alt="Вкрутую"
+              />
+            </picture>
             <p>
               Вкрутую
             </p>
           </label>
         </div>
+        <div class="types">
+          <input type="radio" name="type" id="type-hen" value="hen" checked>
+          <label for="type-hen">
+            <p>
+              Куриное
+            </p>
+          </label>
+          <input type="radio" name="type" id="type-quail" value="quail">
+          <label for="type-quail">
+            <p>
+              Перепелиное
+            </p>
+          </label>
+        </div>
         <button class="timer" type="submit">
-          <img class="timer__image" src="timer.svg" width="879" height="898">
-          <img class="timer__inner" src="timer__inner.svg" width="879" height="898">
+          <picture>
+            <img
+                class="timer__image"
+                srcset="timer@2x.png 2x"
+                src="./timer.png"
+                width="655"
+                height="670"
+            />
+          </picture>
+          <picture>
+            <img
+                class="timer__inner"
+                srcset="timer__inner@2x.png 2x"
+                src="./timer__inner.png"
+                width="479"
+                height="489"
+            />
+          </picture>
           <p class="timer__time">
             00:00
           </p>

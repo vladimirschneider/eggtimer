@@ -4,8 +4,26 @@ const audio = new Audio();
 
 let audioIsActive = false;
 
+const data = {
+    hen: {
+        soft: 6 * 60 * 1000,
+        medium: 8 * 60 * 1000,
+        hard: 10 * 60 * 1000
+    },
+    quail: {
+        soft: 2 * 60 * 1000 + 30 * 1000,
+        medium: 4 * 60 * 1000,
+        hard: 5 * 60 * 1000
+    }
+}
+
 class Timer {
-    constructor() {
+    constructor(data) {
+        this.data = data;
+
+        this.type = 'hen';
+        this.readiness = 'soft';
+
         this.timerContainer = document.querySelector('.timer');
         this.timer = this.timerContainer.querySelector('.timer__time');
         this.ms = 6 * 60 * 1000;
@@ -14,6 +32,22 @@ class Timer {
         this.go = this.go.bind(this);
 
         this.go();
+    }
+
+    setState(key, value) {
+        if (key === 'type') {
+            if (this.data[value]) {
+                this.type = value;
+            }
+        } else if (key === 'readiness') {
+            if (this.data[this.type][value]) {
+                this.readiness = value;
+            }
+        }
+
+        const time = this.data[this.type][this.readiness];
+
+        this.setTime(time);
     }
 
     setTime(t) {
@@ -60,7 +94,7 @@ class Timer {
     }
 }
 
-const timer = new Timer();
+const timer = new Timer(data);
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -74,6 +108,18 @@ form.addEventListener('submit', (e) => {
     }
 });
 
+const types = document.querySelectorAll('[name="type"]');
+
+types.forEach((state) => {
+    state.addEventListener('input', (e) => {
+        const {value} = e.target;
+
+        timer.pause();
+
+        timer.setState('type', value);
+    });
+});
+
 const states = document.querySelectorAll('[name="state"]');
 
 states.forEach((state) => {
@@ -82,16 +128,6 @@ states.forEach((state) => {
 
         timer.pause();
 
-        switch (value) {
-            case 'soft':
-                timer.setTime(6 * 60 * 1000);
-                break;
-            case 'medium':
-                timer.setTime(8 * 60 * 1000);
-                break;
-            case 'hard':
-                timer.setTime(10 * 60 * 1000);
-                break;
-        }
+        timer.setState('readiness', value);
     });
 });

@@ -11,7 +11,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
-  padding: 12.5em 5.6em;
+  padding: 12.5em 0;
 
   font-size: 4px;
   font-family: -apple-system, "SF Pro Text", sans-serif;
@@ -24,7 +24,7 @@ body {
   max-width: 130em;
   margin-right: auto;
   margin-left: auto;
-  padding: 0 5em;
+  padding: 0 5.6em;
 }
 
 h1 {
@@ -35,7 +35,7 @@ h1 {
 }
 
 h2 {
-  margin: 0 0 1.7em;
+  margin: 0 0 1.4em;
 
   font-size: 4.3em;
   letter-spacing: 0.07em;
@@ -49,6 +49,7 @@ input {
   display: grid;
   grid-template-columns: repeat(3, calc(100% / 3 - 1em));
   justify-content: space-between;
+  margin-bottom: 5em;
 }
 
 label {
@@ -56,10 +57,10 @@ label {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 29em;
+  height: 25em;
   padding: 1em;
 
-  color: #F4E9D3;
+  color: white;
 
   border-radius: 2em;
 
@@ -79,6 +80,8 @@ label p {
   font-size: 3.2em;
   font-weight: 600;
   font-family: -apple-system, "SF Pro Text", sans-serif;
+
+  white-space: nowrap;
 }
 
 label:hover,
@@ -93,7 +96,7 @@ input:checked + label {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 70em;
+  height: 50em;
   margin: 18em 0 0 0;
   padding: 0;
 
@@ -188,7 +191,7 @@ input:checked + label {
 
   margin: 0;
 
-  font-size: 12em;
+  font-size: 8em;
   font-weight: 600;
   color: white;
 
@@ -202,7 +205,7 @@ input:checked + label {
   top: 50%;
   left: 50%;
 
-  height: 70em;
+  height: 55em;
   margin: 0;
 
   transform: translate(-50%, -50%);
@@ -213,7 +216,7 @@ input:checked + label {
   top: 50%;
   left: 50%;
 
-  height: 56em;
+  height: 45em;
   margin: 0;
 
   transform: translate(-50%, -50%);
@@ -228,4 +231,28 @@ footer {
   width: 6em;
   height: 6em;
   fill: #ffffff;
+}
+
+.types {
+  display: flex;
+  margin-bottom: 8em;
+
+  height: 10em;
+  padding: 1em 2em;
+
+  background-color: #262626;
+  border-radius: 2em;
+}
+
+.types label {
+  height: auto;
+  flex-grow: 1;
+}
+
+.types input:checked + label {
+  background-color: black;
+}
+
+.types label p {
+  font-size: 4em;
 }
