@@ -1,8 +1,7 @@
-import alarm from "../public/media/alarm.mp3";
-
 export default class Timer {
-  constructor(data) {
+  constructor(data, options) {
     this.data = data;
+    this.options = options;
 
     this.type = 'hen';
     this.readiness = 'soft';
@@ -27,7 +26,7 @@ export default class Timer {
 
       if (!audioIsActive) {
         this.audio.play();
-        this.audio.src = alarm;
+        this.audio.src = this.options.alarm;
         audioIsActive = true;
       }
     });

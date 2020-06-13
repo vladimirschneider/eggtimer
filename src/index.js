@@ -4,20 +4,13 @@ import '../public/css/style.css';
 
 import Timer from './Timer';
 
-const data = {
-    hen: {
-        soft: 6 * 60 * 1000,
-        medium: 8 * 60 * 1000,
-        hard: 10 * 60 * 1000
-    },
-    quail: {
-        soft: 2 * 60 * 1000 + 30 * 1000,
-        medium: 4 * 60 * 1000,
-        hard: 5 * 60 * 1000
-    }
-}
+import { data } from './settings';
 
-const timer = new Timer(data);
+import alarm from '../public/media/alarm.mp3';
+
+const timer = new Timer(data, {
+  alarm
+});
 
 const types = document.querySelectorAll('[name="type"]');
 
