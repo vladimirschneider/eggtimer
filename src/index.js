@@ -1,3 +1,8 @@
+import 'normalize.css';
+import 'improve.css';
+import '../public/css/style.css';
+import alarm from '../public/media/alarm.mp3';
+
 const form = document.querySelector('form');
 
 const audio = new Audio();
@@ -103,7 +108,7 @@ form.addEventListener('submit', (e) => {
 
     if (!audioIsActive) {
         audio.play();
-        audio.src = './analog-watch-alarm_daniel-simion.mp3';
+        audio.src = alarm;
         audioIsActive = true;
     }
 });
