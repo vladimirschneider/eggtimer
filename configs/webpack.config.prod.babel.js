@@ -27,9 +27,6 @@ export default merge.smart(baseConfig, {
             pngquant: {
               quality: [0.9, 1.0],
               speed: 4,
-            },
-            webp: {
-              quality: 75
             }
           }
         }]
